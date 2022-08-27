@@ -7,8 +7,8 @@ function Diet() {
   if (bmiCategory === "Underweight") {
     return (
       <div
-        className="bg-white flex-1 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
-      sm:p-8 p-4 mx-2 mt-4"
+        className="bg-white w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+      sm:p-8 p-4  mt-4 mr-2"
       >
         <h1 className={`font-semibold mb-2 ${bmicolor} drop-shadow-sm`}>
           Risks associated with being underweight
@@ -53,8 +53,8 @@ function Diet() {
   } else if (bmiCategory === "Overweight" || bmiCategory === "Obese") {
     return (
       <div
-        className="bg-white flex-1 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
-        sm:p-8 p-4 mx-2 mt-4"
+        className="bg-white w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+        sm:p-8 p-4  mt-4"
       >
         <h1 className={`font-semibold mb-2 ${bmicolor} drop-shadow-sm`}>
           Risks associated with being overweight
@@ -106,8 +106,8 @@ function Diet() {
   } else if (bmiCategory === "Normal") {
     return (
       <div
-        className="bg-white flex-1 w-full h-auto border-solid border border-slate-300 rounded-xl shadow-md
-    sm:p-8 p-4 mx-2 mt-4 text-center"
+        className="bg-white w-full h-auto border-solid border border-slate-300 rounded-xl shadow-md
+    sm:p-8 p-4  mt-4 text-center"
       >
         <h1 className={`${bmicolor} font-semibold text-3xl drop-shadow-md`}>
           You are Perfect!

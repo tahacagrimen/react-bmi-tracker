@@ -10,7 +10,7 @@ function App() {
   return (
     <FirebaseLoginProvider>
       <BmiProvider>
-        <div className="App w-screen min-h-screen sm:p-16 p-2 font-sans bg-slate-100">
+        <div className="App w-screen min-h-screen sm:p-16 p-6 font-sans bg-slate-100">
           <Profile />
           <div className="flex sm:flex-row flex-col items-center justify-center sm:mt-8 mt-2">
             <BmiForm />
