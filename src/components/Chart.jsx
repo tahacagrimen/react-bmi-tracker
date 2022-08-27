@@ -24,18 +24,17 @@ ChartJS.register(
 );
 
 function Chart() {
-  const { userUid, userData, chartDate, chartBim } =
+  const { userUid, userData, chartDate, chartBmi } =
     useContext(FirebaseLoginContext);
 
-  console.log(chartDate);
-  console.log(chartBim);
+  let arr = [...chartBmi];
 
   const data = {
     labels: chartDate,
     datasets: [
       {
         label: "Your recent BMI",
-        data: chartBim,
+        data: arr,
         fill: true,
         backgroundColor: "rgba(75,192,192,0.2)",
         borderColor: "rgba(75,192,192,1)",
@@ -45,7 +44,10 @@ function Chart() {
 
   if (!userUid) {
     return (
-      <div className="sm:w-6/12 w-full">
+      <div
+        className="bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+      sm:p-8 p-2 mx-2"
+      >
         <h1>Please log in to see your BMI history</h1>
       </div>
     );
@@ -55,13 +57,16 @@ function Chart() {
     <>
       {userData.length > 0 ? (
         <div
-          className="flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+          className="bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
         sm:p-8 p-2 mx-2"
         >
           <Line data={data} />
         </div>
       ) : (
-        <div className="sm:w-6/12 w-full">
+        <div
+          className=" bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+        sm:p-8 p-2 mx-2"
+        >
           <h1>You have no BMI history</h1>
         </div>
       )}

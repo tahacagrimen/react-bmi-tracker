@@ -21,8 +21,8 @@ function BmiForm() {
 
   return (
     <div
-      className="flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
-    sm:p-8 p-2 mx-4"
+      className="bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+    sm:p-8 p-4 mx-4 mb-2"
     >
       <h1 className="font-medium text-xl mb-2">BMI Calculator</h1>
       <div className="flex flex-row items-center justify-between my-4">
