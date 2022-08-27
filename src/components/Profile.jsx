@@ -3,7 +3,6 @@ import FirebaseLoginContext from "../contexts/FirebaseLoginContext";
 
 function Profile() {
   const {
-    userUid,
     userName,
     userPicture,
     userEmail,
@@ -12,12 +11,11 @@ function Profile() {
     handleLogout,
   } = useContext(FirebaseLoginContext);
 
-  console.log(userPicture);
-
   return (
     <div className="w-full h-auto border-solid border border-slate-300 rounded-xl flex items-center justify-between p-4 shadow-md">
       <div className="flex items-center justify-center">
         <img
+          referrerPolicy="no-referrer"
           className="w-12 h-12 rounded-full mr-4 border-solid border-blue-500 border-2 shadow-xl"
           src={userPicture}
           alt=""
@@ -30,6 +28,7 @@ function Profile() {
       {isLoggedIn ? (
         <button onClick={handleLogout}>
           <img
+            referrerPolicy="no-referrer"
             className="sm:w-6 sm:h-6 w-4 h-4"
             src="https://cdn-icons-png.flaticon.com/512/126/126467.png"
             alt=""

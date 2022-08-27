@@ -2,6 +2,7 @@ import "./App.css";
 import Profile from "./components/Profile";
 import BmiForm from "./components/BmiForm";
 import Chart from "./components/Chart";
+import History from "./components/History";
 import { FirebaseLoginProvider } from "./contexts/FirebaseLoginContext";
 import { BmiProvider } from "./contexts/BmiContext";
 
@@ -14,6 +15,9 @@ function App() {
           <div className="flex sm:flex-row flex-col items-center justify-center sm:mt-8 mt-2">
             <BmiForm />
             <Chart />
+          </div>
+          <div>
+            <History />
           </div>
         </div>
       </BmiProvider>
