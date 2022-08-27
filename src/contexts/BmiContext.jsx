@@ -10,7 +10,6 @@ import FirebaseLoginContext from "./FirebaseLoginContext";
 import { db } from "../firebase";
 import { doc, setDoc, addDoc } from "firebase/firestore";
 import { nanoid } from "nanoid";
-import { async } from "@firebase/util";
 
 import moment from "moment";
 
@@ -38,14 +37,15 @@ export function BmiProvider({ children }) {
 
   const calculateBmi = async () => {
     setBmi(
-      (Number(weight) / (Number(height) * Number(height)))
+      (Number(weight) / ((Number(height) * Number(height)) / 10000))
+        .toFixed(2)
         .toString()
         .substring(0, 5)
     );
   };
 
   useEffect(() => {
-    if (bmi !== 0 && bmi < 18.5) {
+    if (bmi !== null && bmi < 18.5) {
       setBmiCategory("Underweight");
       setBmicolor("text-lime-200");
     } else if (bmi >= 18.5 && bmi < 25) {
@@ -80,13 +80,8 @@ export function BmiProvider({ children }) {
       id: randomId,
       date: dateString,
       bmi: bmi,
-    })
-      .then(() => {
-        handleReset();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    });
+    handleReset();
   };
 
   return (
@@ -104,6 +99,8 @@ export function BmiProvider({ children }) {
         bmicolor,
         firstRef,
         secondRef,
+        setBmiCategory,
+        setBmicolor,
       }}
     >
       {children}

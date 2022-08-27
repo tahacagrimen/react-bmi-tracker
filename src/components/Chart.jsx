@@ -45,7 +45,7 @@ function Chart() {
   if (!userUid) {
     return (
       <div
-        className="bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+        className="bg-white flex-1 sm:w-6/12 w-full h-96 text-left border-solid border border-slate-300 rounded-xl shadow-md
       sm:p-8 p-2 mx-2"
       >
         <h1>Please log in to see your BMI history</h1>
@@ -57,14 +57,19 @@ function Chart() {
     <>
       {userData.length > 0 ? (
         <div
-          className="bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+          className="bg-white flex-1 flex items-center justify-center sm:w-6/12 w-full h-96 text-left border-solid border border-slate-300 rounded-xl shadow-md
         sm:p-8 p-2 mx-2"
         >
-          <Line data={data} />
+          <Line
+            data={data}
+            height="100%"
+            width="100%"
+            options={{ maintainAspectRatio: false }}
+          />
         </div>
       ) : (
         <div
-          className=" bg-white flex-1 sm:w-6/12 w-full h-auto text-left border-solid border border-slate-300 rounded-xl shadow-md
+          className=" bg-white flex-1 sm:w-6/12 w-full h-96 text-left border-solid border border-slate-300 rounded-xl shadow-md
         sm:p-8 p-2 mx-2"
         >
           <h1>You have no BMI history</h1>
