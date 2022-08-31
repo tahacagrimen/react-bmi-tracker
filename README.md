@@ -1,5 +1,5 @@
 
-# Weather App
+# Body Mass Index Tracker
 
 This app tracks data of users Body Mass Index. 
 
